@@ -1,2 +1,3 @@
-# python3
-两数之和的各种解法
+#python3
+python3的许多问题实例及解决方案
+主要来源于leetcode的题目
