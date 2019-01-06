@@ -1,7 +1,25 @@
 #!/usr/bin/env python
 # coding: utf-8
-
-def lengthOfLongestSubstring(s):
+def lengthOfLongestSubstring1(s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        l = len(s)
+        longest = 0
+        sub_s = []
+        if l==1:
+            return 1
+        for x in range(0,l):
+            if s[x] in sub_s:
+                i = sub_s.index(s[x])+1
+                sub_s = sub_s[i:]
+            sub_s.append(s[x])
+            sub_len = len(sub_s)
+            if sub_len > longest:
+                longest = sub_len
+        return longest
+def lengthOfLongestSubstring2(s):
         """
         :type s: str
         :rtype: int
@@ -27,7 +45,8 @@ def lengthOfLongestSubstring(s):
 
 if __name__ == "__main__":
 	s="abac"
-	print(lengthOfLongestSubstring(s))
+	print(lengthOfLongestSubstring1(s))
+	print(lengthOfLongestSubstring2(s))
 
 
 
